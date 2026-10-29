@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Truth in Food Scanner - explore food ingredients, nutrition and allergens.">
+  <title>Truth in Food Scanner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">🥑</span>
+      <span>Truth<span class="green">InFood</span></span>
+    </a>
+    <nav>
+      <a href="#scanner">Scanner</a>
+      <a href="#features">Features</a>
+      <a href="#history">History</a>
+    </nav>
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">🌙</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow">YOUR FOOD. YOUR CHOICE.</span>
+      <h1>Know what's <span class="green">inside.</span></h1>
+      <p>Understand ingredients, discover nutrition facts, and make more informed food choices.</p>
+      <a class="primary-btn hero-btn" href="#scanner">Explore your food ↓</a>
+      <div class="hero-badges">
+        <span>✓ Ingredient insights</span>
+        <span>✓ Nutrition facts</span>
+        <span>✓ Allergen awareness</span>
+      </div>
+    </section>
+
+    <section class="scanner-section" id="scanner">
+      <div class="section-heading">
+        <span class="eyebrow">SMART FOOD EXPLORER</span>
+        <h2>Scan. Discover. Understand.</h2>
+        <p>Search by product name or enter a barcode number.</p>
+      </div>
+
+      <div class="search-card">
+        <form id="searchForm">
+          <label for="productSearch">Product name</label>
+          <div class="search-row">
+            <input id="productSearch" type="search"
+              placeholder="Try searching for Nutella, oats, biscuits..."
+              required>
+            <button class="primary-btn" type="submit">Search</button>
+          </div>
+        </form>
+
+        <div class="or-divider"><span>OR SEARCH BY BARCODE</span></div>
+
+        <form id="barcodeForm">
+          <label for="barcodeInput">Barcode number</label>
+          <div class="search-row">
+            <input id="barcodeInput" inputmode="numeric"
+              placeholder="Enter the digits below a product barcode"
+              pattern="[0-9]{8,14}" required>
+            <button class="secondary-btn" type="submit">Find product</button>
+          </div>
+        </form>
+
+        <p class="helper">Product information is retrieved from Open Food Facts.
+          Internet access is required.</p>
+      </div>
+
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section id="features" class="features-section">
+      <div class="section-heading">
+        <span class="eyebrow">MADE FOR MINDFUL CHOICES</span>
+        <h2>Food labels, made simpler.</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-icon">🥗</span>
+          <h3>Nutrition insights</h3>
+          <p>Explore energy, sugar, fat, protein and salt per 100 grams when data is available.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">🔎</span>
+          <h3>Ingredient explorer</h3>
+          <p>Read product ingredients and highlight common additives for closer inspection.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">⚠️</span>
+          <h3>Allergen awareness</h3>
+          <p>Identify allergen information recorded in the database. Always verify the physical label.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">📚</span>
+          <h3>Your food journal</h3>
+          <p>Keep a local history of viewed products and save favorites on your device.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="history" class="history-section">
+      <div class="history-heading">
+        <div>
+          <span class="eyebrow">YOUR PERSONAL COLLECTION</span>
+          <h2>Recently explored</h2>
+        </div>
+        <button id="clearHistory" class="text-btn" type="button">Clear history</button>
+      </div>
+      <div id="historyList" class="history-list">
+        <p class="empty-state">Products you explore will appear here.</p>
+      </div>
+    </section>
+
+    <section class="disclaimer">
+      <strong>Important:</strong> This tool is for informational purposes only.
+      Product data may be incomplete or outdated. It does not diagnose allergies,
+      certify products as healthy, or replace professional medical advice.
+      Always read the actual packaging, especially if you have a food allergy.
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#">🥑 Truth<span class="green">InFood</span></a>
+    <p>Making food information easier to understand.</p>
+    <p>Data source: <a href="https://world.openfoodfacts.org/"
+      target="_blank" rel="noopener noreferrer">Open Food Facts</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
